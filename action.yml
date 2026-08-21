@@ -1,0 +1,34 @@
+name: "hreflang-audit"
+description: "Audit hreflang (international SEO): return links, invalid locale codes, canonical conflicts, broken alternates."
+author: "Reza Madahzadeh"
+branding:
+  icon: "globe"
+  color: "blue"
+inputs:
+  url:
+    description: "Start URL to crawl"
+    required: false
+    default: ""
+  sitemap:
+    description: "Sitemap URL to audit instead of crawling"
+    required: false
+    default: ""
+  max-pages:
+    description: "Maximum pages to crawl"
+    required: false
+    default: "200"
+  fail-on:
+    description: "Fail the job on: error | warning | none"
+    required: false
+    default: "error"
+runs:
+  using: "composite"
+  steps:
+    - name: Run hreflang-audit
+      shell: bash
+      run: |
+        if [ -n "${{ inputs.sitemap }}" ]; then
+          node "${{ github.action_path }}/hreflang-audit.mjs" --sitemap "${{ inputs.sitemap }}" --fail-on "${{ inputs.fail-on }}" --no-color
+        else
+          node "${{ github.action_path }}/hreflang-audit.mjs" "${{ inputs.url }}" --max-pages "${{ inputs.max-pages }}" --fail-on "${{ inputs.fail-on }}" --no-color
+        fi

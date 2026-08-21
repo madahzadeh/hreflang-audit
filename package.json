@@ -1,0 +1,17 @@
+{
+  "name": "hreflang-audit",
+  "version": "1.0.0",
+  "description": "Zero-dependency CLI + GitHub Action that audits hreflang (international SEO): return links, invalid locale codes, canonical conflicts, broken alternates.",
+  "type": "module",
+  "bin": { "hreflang-audit": "./hreflang-audit.mjs" },
+  "main": "./hreflang-audit.mjs",
+  "scripts": {
+    "test": "node --test",
+    "demo": "node hreflang-audit.mjs --demo"
+  },
+  "engines": { "node": ">=20" },
+  "keywords": ["seo", "hreflang", "international-seo", "technical-seo", "cli", "audit", "i18n"],
+  "author": "Reza Madahzadeh (https://github.com/madahzadeh)",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "git+https://github.com/madahzadeh/hreflang-audit.git" }
+}
