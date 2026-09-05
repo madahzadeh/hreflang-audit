@@ -1,6 +1,7 @@
 # hreflang-audit
 
 [![CI](https://github.com/madahzadeh/hreflang-audit/actions/workflows/ci.yml/badge.svg)](https://github.com/madahzadeh/hreflang-audit/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/hreflang-audit)](https://www.npmjs.com/package/hreflang-audit)
 [![Node.js 20+](https://img.shields.io/badge/node-%3E%3D20-brightgreen)](https://nodejs.org)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Zero dependencies](https://img.shields.io/badge/dependencies-0-lightgrey)](package.json)
@@ -9,19 +10,29 @@ Zero-dependency CLI + GitHub Action that audits your **hreflang** (international
 
 ![hreflang-audit demo](docs/demo.gif)
 
+
 ## Quick start
 
-Node.js 20+ is the only requirement — no `npm install` needed.
+No install, no clone — just Node.js 20+:
+
+```bash
+npx hreflang-audit https://example.com/                          # crawl and audit
+npx hreflang-audit --sitemap https://example.com/sitemap.xml     # audit from a sitemap
+```
+
+Prefer a global install? `npm i -g hreflang-audit`, then run `hreflang-audit <url>`.
+
+<details>
+<summary>Run from source instead</summary>
 
 ```bash
 git clone https://github.com/madahzadeh/hreflang-audit.git
 cd hreflang-audit
-
-node hreflang-audit.mjs https://example.com/          # crawl and audit
-node hreflang-audit.mjs --sitemap https://example.com/sitemap.xml
-npm run demo                                          # offline demo with seeded issues
-npm test                                              # deterministic test suite
+node hreflang-audit.mjs https://example.com/
+npm run demo   # offline demo with seeded issues
+npm test       # deterministic test suite
 ```
+</details>
 
 ## What it checks
 
