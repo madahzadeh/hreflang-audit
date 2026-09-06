@@ -1,6 +1,6 @@
 {
   "name": "hreflang-audit",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Zero-dependency CLI + GitHub Action that audits hreflang (international SEO): return links, invalid locale codes, canonical conflicts, broken alternates.",
   "type": "module",
   "bin": {
