@@ -642,6 +642,10 @@ async function main() {
     process.exit(2);
   }
 
+  const printFooter = () => {
+    if (!cli.json) console.error(`────────────────────────────────────────────────\nhreflang-audit v${VERSION} · github.com/madahzadeh`);
+  };
+
   let options;
   let demoServer = null;
   if (cli.demo) {
@@ -670,6 +674,7 @@ async function main() {
   } catch (e) {
     console.error(`error: ${e.message}`);
     if (demoServer) demoServer.close();
+    printFooter();
     process.exit(2);
   }
   if (demoServer) demoServer.close();
@@ -680,6 +685,7 @@ async function main() {
     console.log(formatReport(report));
   }
 
+  printFooter();
   if (cli.demo || failOn === "none") process.exit(0);
   const { errors, warnings } = report.summary;
   const failing = failOn === "warning" ? errors + warnings : errors;

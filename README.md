@@ -34,6 +34,26 @@ npm test       # deterministic test suite
 ```
 </details>
 
+<details>
+<summary>Example output</summary>
+
+```
+hreflang-audit v1.0.1
+
+✓ No hreflang issues found.
+
+Summary
+  pages scanned: 57   pages with hreflang: 57
+  errors: 0   warnings: 0
+npm notice
+npm notice New major version of npm available! 10.9.2 -> 12.0.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.0.2
+npm notice To update run: npm install -g npm@12.0.2
+npm notice
+```
+
+</details>
+
 ## What it checks
 
 | Code | Check | Meaning |
@@ -81,10 +101,10 @@ jobs:
   audit:
     runs-on: ubuntu-latest
     steps:
-      - uses: madahzadeh/hreflang-audit@main
+      - uses: madahzadeh/hreflang-audit@v1
         with:
           url: https://example.com/
-          max-pages: 300
+          max-pages: '300'
           fail-on: error
 ```
 
@@ -109,6 +129,11 @@ jobs:
 ## Limitations
 
 Honest scope: HTML is parsed with tolerant regexes, not a full DOM — pathological markup may be misread. JavaScript-rendered pages are not executed; audit the server-rendered HTML. This tool complements, but does not replace, Google Search Console's international targeting reports.
+
+## Related tools
+
+- [schema-audit](https://github.com/madahzadeh/schema-audit) — crawls a site and validates JSON-LD structured data for rich results
+- [llms-txt-audit](https://github.com/madahzadeh/llms-txt-audit) — generates and validates `llms.txt` so AI answer engines can read and cite your site
 
 ## Hire me
 
