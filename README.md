@@ -37,19 +37,47 @@ npm test       # deterministic test suite
 <details>
 <summary>Example output</summary>
 
+`npx --yes hreflang-audit https://www.mozilla.org --max-pages 15 --no-color`
+
 ```
 hreflang-audit v1.0.1
 
-✓ No hreflang issues found.
+W102 missing-x-default (358)
+  • https://www.mozilla.org/en-US/
+    no x-default entry in the hreflang set
+    fix: add an x-default entry pointing to your language-selector or primary page
+  • https://www.mozilla.org/en-US/privacy/websites/cookie-settings/
+    no x-default entry in the hreflang set
+    fix: add an x-default entry pointing to your language-selector or primary page
+  • https://www.mozilla.org/en-US/
+    no x-default entry in the hreflang set
+    fix: add an x-default entry pointing to your language-selector or primary page
+  • https://www.mozilla.org/en-US/products/
+    no x-default entry in the hreflang set
+    fix: add an x-default entry pointing to your language-selector or primary page
+  • https://www.mozilla.org/en-US/products/vpn/
+    no x-default entry in the hreflang set
+    fix: add an x-default entry pointing to your language-selector or primary page
+  • https://www.mozilla.org/en-US/products/monitor/
+    no x-default entry in the hreflang set
+    fix: add an x-default entry pointing to your language-selector or primary page
+  • https://www.mozilla.org/en-US/about/
+    no x-default entry in the hreflang set
+    fix: add an x-default entry pointing to your language-selector or primary page
+…
+  • https://www.mozilla.org/ur/
+    hreflang="x-default" target https://www.mozilla.org/ redirects to https://www.mozilla.org/en-US/
+    fix: point hreflang directly at the final URL https://www.mozilla.org/en-US/
+  • https://www.mozilla.org/vi/
+    hreflang="x-default" target https://www.mozilla.org/ redirects to https://www.mozilla.org/en-US/
+    fix: point hreflang directly at the final URL https://www.mozilla.org/en-US/
+  • https://www.mozilla.org/zh-TW/
+    hreflang="x-default" target https://www.mozilla.org/ redirects to https://www.mozilla.org/en-US/
+    fix: point hreflang directly at the final URL https://www.mozilla.org/en-US/
 
 Summary
-  pages scanned: 57   pages with hreflang: 57
-  errors: 0   warnings: 0
-npm notice
-npm notice New major version of npm available! 10.9.2 -> 12.0.2
-npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.0.2
-npm notice To update run: npm install -g npm@12.0.2
-npm notice
+  pages scanned: 416   pages with hreflang: 416
+  errors: 0   warnings: 416
 ```
 
 </details>
